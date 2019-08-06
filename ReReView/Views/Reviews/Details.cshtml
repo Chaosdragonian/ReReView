@@ -1,0 +1,50 @@
+﻿@model ReReView.DAL.Review
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Review</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Restuarant.restaurantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restuarant.restaurantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reviewExplanation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reviewExplanation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.reviewID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

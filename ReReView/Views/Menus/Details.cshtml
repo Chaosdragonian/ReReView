@@ -1,0 +1,42 @@
+﻿@model ReReView.DAL.Menu
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Menu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Restuarant.restaurantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restuarant.restaurantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.menuType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menuType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.menuName }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

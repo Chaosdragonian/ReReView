@@ -55,6 +55,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -127,6 +129,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenusController.cs" />
+    <Compile Include="Controllers\RestuarantsController.cs" />
+    <Compile Include="Controllers\ReviewsController.cs" />
+    <Compile Include="DAL\Menu.cs" />
+    <Compile Include="DAL\ReReViewContext.cs" />
+    <Compile Include="DAL\Restuarant.cs" />
+    <Compile Include="DAL\Review.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,6 +152,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ConnectionStrings.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -168,10 +178,25 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Menus\Create.cshtml" />
+    <Content Include="Views\Menus\Delete.cshtml" />
+    <Content Include="Views\Menus\Details.cshtml" />
+    <Content Include="Views\Menus\Edit.cshtml" />
+    <Content Include="Views\Menus\Index.cshtml" />
+    <Content Include="Views\Restuarants\Create.cshtml" />
+    <Content Include="Views\Restuarants\Delete.cshtml" />
+    <Content Include="Views\Restuarants\Details.cshtml" />
+    <Content Include="Views\Restuarants\Edit.cshtml" />
+    <Content Include="Views\Restuarants\Index.cshtml" />
+    <Content Include="Views\Reviews\Create.cshtml" />
+    <Content Include="Views\Reviews\Delete.cshtml" />
+    <Content Include="Views\Reviews\Details.cshtml" />
+    <Content Include="Views\Reviews\Edit.cshtml" />
+    <Content Include="Views\Reviews\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="DAL\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
