@@ -15,12 +15,18 @@ namespace ReReView.Controllers
         private ReReViewContext db = new ReReViewContext();
 
         // GET: Restuarants
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            return View(db.Restuarants.ToList());
+            string searchRestrauntString = id;
+            var restraunts = from r in db.Restuarants select r;
+            if (!String.IsNullOrEmpty(searchRestrauntString))
+            {
+                restraunts = restraunts.Where(s => s.restaurantName.Contains(searchRestrauntString));
+            }
+            return View(restraunts);
         }
 
-        // GET: Restuarants/Details/5
+        // GET: Restuarants/Details/5s
         public ActionResult Details(int? id)
         {
             if (id == null)
