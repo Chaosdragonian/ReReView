@@ -3,61 +3,162 @@
 @{
     ViewBag.Title = "Index";
 }
+<header>
+    <style>
+        #searchingItems {
+            width: 850px;
+            height: 150px;
+            margin-top: 80px;
+        }
 
-<h2>Index</h2>
+        #textboxAndButton {
+            margin-left: 20%;
+        }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.restaurantName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model._class)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.star)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.openTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.closeTIme)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.priceRange)
-        </th>
-        <th></th>
-    </tr>
+        #priceButtonAndListbox {
+            margin-top: 3%;
+            margin-left: 22%;
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.restaurantName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item._class)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.star)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.openTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.closeTIme)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.priceRange)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.restaurantID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.restaurantID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.restaurantID })
-        </td>
-    </tr>
-}
+        #textBox {
+            width: 800px;
+            height: 50px;
+            font-size: 17px;
+        }
 
-</table>
+        #searchButton {
+            background-color: #2196F3;
+            width: 180px;
+            height: 50px;
+            border-radius: 10px 10px 10px 10px;
+            color: white;
+            font-size: 20px;
+            border: 0;
+            margin-left: 10%;
+        }
+
+        #lowPriceButton {
+            width: 50px;
+            height: 30px;
+            background-color: #F59A23;
+            border-radius: 10px 10px 10px 10px;
+            border: 0;
+            color: white;
+            font-size: 20px;
+        }
+
+        #middlePriceButton {
+            width: 80px;
+            height: 30px;
+            background-color: #F59A23;
+            border-radius: 10px 10px 10px 10px;
+            border: 0;
+            color: white;
+            font-size: 20px;
+            margin-left: 3%;
+        }
+
+        #highPriceButton {
+            width: 110px;
+            height: 30px;
+            background-color: #F59A23;
+            border-radius: 10px 10px 10px 10px;
+            border: 0;
+            color: white;
+            font-size: 17px;
+            margin-left: 3%;
+        }
+        #countryType {
+            margin-left: 10%;
+            height: 30px;
+            font-size: 17px;
+        }
+        #restaurantTable {
+            background-color: #222222;
+        }
+        #searchingTable {
+            color: white;
+           
+        }
+    </style>
+</header>
+
+
+<div class="row">
+    <div class="container" id="searchingItems">
+        <div id="textboxAndButton">
+            <input type="text" id="textBox" placeholder="Please enter a restaurant name" />
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="priceButtonAndListbox">
+            <button clsss="priceButton" id="lowPriceButton">$</button>
+            <button clsss="priceButton" id="middlePriceButton">$$</button>
+            <button clsss="priceButton" id="highPriceButton">$$$</button>
+            <select name="countryType" id="countryType">
+                <option value="korean">Korean</option>
+                <option value="maxican">Maxican</option>
+                <option value="italian">Italian</option>
+                <option value="american">American</option>
+                <option value="chinese">Chinese</option>
+                <option value="japanese">Japanese</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="restaurantTable">
+    <h2>index</h2>
+    <table class="table" id="searchingTable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.restaurantName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model._class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.star)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.openTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.closeTIme)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.priceRange)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.restaurantName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._class)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.star)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.openTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.closeTIme)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.priceRange)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.restaurantID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.restaurantID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.restaurantID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -3,49 +3,58 @@
 @{
     ViewBag.Title = "Index";
 }
+<header>
+    <style>
+      .table{
+          width: 800px;
+      }
+    </style>
+</header>
+<div class="row">
+    <div class="col-md-9">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Restuarant.restaurantName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.score)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.reviewExplanation)
+                </th>
+                <th></th>
+            </tr>
 
-<h2>Index</h2>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Restuarant.restaurantName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.score)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.reviewExplanation)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.reviewID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.reviewID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.reviewID })
+                    </td>
+                </tr>
+            }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Restuarant.restaurantName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.score)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.reviewExplanation)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Restuarant.restaurantName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.score)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.reviewExplanation)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.reviewID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.reviewID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.reviewID })
-        </td>
-    </tr>
-}
-
-</table>
+        </table>
+    </div>
+    <div class="col=md-3">
+        <img src="/review_background.jpg" style="height:auto; width:300px">
+    </div>
+</div>
