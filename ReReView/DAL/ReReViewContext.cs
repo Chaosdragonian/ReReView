@@ -8,7 +8,7 @@ namespace ReReView.DAL
     public partial class ReReViewContext : DbContext
     {
         public ReReViewContext()
-            : base("name=ReReViewContext")
+            : base("ReReViewContext")
         {
         }
 
@@ -61,6 +61,7 @@ namespace ReReView.DAL
             modelBuilder.Entity<Review>()
                 .Property(e => e.reviewExplanation)
                 .IsUnicode(false);
+
         }
     }
 }

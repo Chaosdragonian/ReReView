@@ -1,0 +1,60 @@
+﻿@model ReReView.DAL.Restuarant
+
+<div>
+    <h4>Restuarant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.restaurantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restaurantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model._class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.star)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.star)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.openTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.openTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.closeTIme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.closeTIme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.priceRange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.priceRange)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.restaurantID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
