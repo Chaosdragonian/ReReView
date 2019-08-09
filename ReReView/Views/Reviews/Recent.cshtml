@@ -1,0 +1,50 @@
+﻿ @model IEnumerable<ReReView.DAL.Review>
+<div>
+    <h4>Review</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-9">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Restuarant.restaurantName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.score)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.reviewExplanation)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Restuarant.restaurantName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.score)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.reviewExplanation)
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+<p>
+    @*   @Html.ActionLink("Edit", "Edit", new { id = Model.reviewID }) |
+        @Html.ActionLink("Back to List", "Index")*@
+</p>

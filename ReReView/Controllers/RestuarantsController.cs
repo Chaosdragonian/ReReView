@@ -32,6 +32,14 @@ namespace ReReView.Controllers
             }
             return View(restraunts);
         }
+        public ActionResult Ranking()
+        {
+            var restraunts = (from r in db.Restuarants orderby r.star select r).Take(4);
+
+          //  restraunts = restraunts.Where(s => s.restaurantName.Contains(""));
+
+            return PartialView(restraunts);
+        }
 
 
         public ActionResult Index()

@@ -15,9 +15,13 @@ namespace ReReView.Controllers
         private ReReViewContext db = new ReReViewContext();
 
         // GET: Menus
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            var menus = db.Menus.Include(m => m.Restuarant);
+            var menuInt = id;
+            var menus = from m in db.Menus select m;
+            
+             menus = menus.Where(m => m.menuRestaurantID.Equals(menuInt));
+            
             return View(menus.ToList());
         }
 

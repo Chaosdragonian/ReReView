@@ -4,15 +4,17 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Menus</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
+
         <th>
             @Html.DisplayNameFor(model => model.Restuarant.restaurantName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.menuName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.price)
@@ -20,6 +22,7 @@
         <th>
             @Html.DisplayNameFor(model => model.menuType)
         </th>
+
         <th></th>
     </tr>
 
@@ -29,16 +32,15 @@
             @Html.DisplayFor(modelItem => item.Restuarant.restaurantName)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.menuName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.price)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.menuType)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.menuName }) |
-            @Html.ActionLink("Details", "Details", new { id=item.menuName }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.menuName })
-        </td>
+
     </tr>
 }
 

@@ -130,11 +130,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
+    <Compile Include="Controllers\RankandrecentController.cs" />
     <Compile Include="Controllers\RestuarantsController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="DAL\Menu.cs" />
     <Compile Include="DAL\ReReViewContext.cs" />
-    <Compile Include="DAL\RestaurantViewModel.cs" />
+    <Compile Include="DAL\RankandrecentViewModel.cs" />
     <Compile Include="DAL\Restuarant.cs" />
     <Compile Include="DAL\Review.cs" />
     <Compile Include="Global.asax.cs">
@@ -194,10 +195,13 @@
     <Content Include="Views\Reviews\Details.cshtml" />
     <Content Include="Views\Reviews\Edit.cshtml" />
     <Content Include="Views\Reviews\Index.cshtml" />
+    <Content Include="Views\Restuarants\Ranking.cshtml" />
+    <Content Include="Views\Reviews\Recent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DAL\Models\" />
+    <Folder Include="Views\Rankandrecent\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

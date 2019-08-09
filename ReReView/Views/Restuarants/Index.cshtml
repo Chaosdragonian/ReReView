@@ -96,24 +96,26 @@
         <div id="textboxAndButton">
             @using (Html.BeginForm())
             {
-                <p>
-                    @Html.TextBox("searchRestrauntString")
-                    @*@Html.ListBoxfor(r => r.Restaurants)*@
-                    <input type="submit" value="SearchButton" />
-                </p>
+            <p>
+                @Html.TextBox("searchRestrauntString")
+                @*@Html.ListBoxfor(r => r.Restaurants)*@
 
 
-            <button clsss="priceButton" id="lowPriceButton">$</button>
-            <button clsss="priceButton" id="middlePriceButton">$$</button>
-            <button clsss="priceButton" id="highPriceButton">$$$</button>
-            <select name="countryType" id="countryType">
-                <option value="korean">Korean</option>
-                <option value="maxican">Maxican</option>
-                <option value="italian">Italian</option>
-                <option value="american">American</option>
-                <option value="chinese">Chinese</option>
-                <option value="japanese">Japanese</option>
-            </select>
+
+
+                @*   <button clsss="priceButton" id="lowPriceButton">$</button>
+        <button clsss="priceButton" id="middlePriceButton">$$</button>
+        <button clsss="priceButton" id="highPriceButton">$$$</button>*@
+                <select name="countryType" id="countryType">
+                    <option value="korean">Korean</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="italian">Italian</option>
+                    <option value="american">American</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="japanese">Japanese</option>
+                </select>
+                <input type="submit" value="SearchButton" />
+            </p>
             }
         </div>
             
@@ -128,7 +130,7 @@
                 @Html.DisplayNameFor(model => model.restaurantName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model._class)
+                @Html.DisplayName("class")
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.star)
@@ -149,7 +151,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.restaurantName)
+                    @Html.ActionLink(item.restaurantName, "../Menus/Index", new { id = item.restaurantID })
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item._class)
@@ -166,11 +168,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.priceRange)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.restaurantID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.restaurantID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.restaurantID })
-                </td>
+                
             </tr>
         }
 
