@@ -78,7 +78,14 @@
         }
         #searchingTable {
             color: white;
-           
+            width:80%;
+            margin-left:10%;
+        
+        }
+        h2 {
+            margin-left: 10%;
+            color: white;
+            font-weight: 700;
         }
     </style>
 </header>
@@ -87,10 +94,15 @@
 <div class="row">
     <div class="container" id="searchingItems">
         <div id="textboxAndButton">
-            <input type="text" id="textBox" placeholder="Please enter a restaurant name" />
-            <button id="searchButton">Search</button>
-        </div>
-        <div id="priceButtonAndListbox">
+            @using (Html.BeginForm())
+            {
+                <p>
+                    @Html.TextBox("searchRestrauntString")
+                    @*@Html.ListBoxfor(r => r.Restaurants)*@
+                    <input type="submit" value="SearchButton" />
+                </p>
+
+
             <button clsss="priceButton" id="lowPriceButton">$</button>
             <button clsss="priceButton" id="middlePriceButton">$$</button>
             <button clsss="priceButton" id="highPriceButton">$$$</button>
@@ -102,12 +114,14 @@
                 <option value="chinese">Chinese</option>
                 <option value="japanese">Japanese</option>
             </select>
+            }
         </div>
+            
     </div>
 </div>
 
 <div class="row" id="restaurantTable">
-    <h2>index</h2>
+    <h2>Restaurant</h2>
     <table class="table" id="searchingTable">
         <tr>
             <th>

@@ -134,6 +134,7 @@
     <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="DAL\Menu.cs" />
     <Compile Include="DAL\ReReViewContext.cs" />
+    <Compile Include="DAL\RestaurantViewModel.cs" />
     <Compile Include="DAL\Restuarant.cs" />
     <Compile Include="DAL\Review.cs" />
     <Compile Include="Global.asax.cs">

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ReReView.DAL;
+using System.Text;
 
 namespace ReReView.Controllers
 {
@@ -14,12 +15,36 @@ namespace ReReView.Controllers
     {
         private ReReViewContext db = new ReReViewContext();
 
-        // GET: Restuarants
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult Index(string searchRestrauntString, string countryType)
         {
-            return View(db.Restuarants.ToList());
+            var countryTypes = from f in db.Restuarants select f;
+            var restraunts = from r in db.Restuarants select r;
+            if (!String.IsNullOrEmpty(searchRestrauntString))
+            {
+                restraunts = restraunts.Where(s => s.restaurantName.Contains(searchRestrauntString));
+                
+            }
+            
+            if (!String.IsNullOrEmpty(countryType))
+            {
+                restraunts = restraunts.Where(s => s._class.Contains(countryType));
+            }
+            return View(restraunts);
         }
 
+
+        public ActionResult Index()
+        {
+            var countryTypes = from f in db.Restuarants select f;
+            var restraunts = from r in db.Restuarants select r;
+            //       if (!String.IsNullOrEmpty(searchRestrauntString))
+            //       {
+            //           restraunts = restraunts.Where(s => s.restaurantName.Contains(searchRestrauntString));
+            //          restraunts = restraunts.Where(s => s._class.Contains(countryType));
+            //       }
+            return View(restraunts);
+        }
         // GET: Restuarants/Details/5
         public ActionResult Details(int? id)
         {
