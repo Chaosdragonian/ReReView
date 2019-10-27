@@ -18,6 +18,13 @@
 3) 사용자가 많아질수록 더 정확한 검색결과 제공
 
 ### 1.4 Mockup
+<div align="center"> 
+<img src="https://user-images.githubusercontent.com/36693355/67635240-0fb3b180-f908-11e9-9bff-28962001ff48.png" width="45%" />
+<img src="https://user-images.githubusercontent.com/36693355/67635245-13dfcf00-f908-11e9-98a6-5ebc90ecb7b1.png" width="45%"  />
+<img src="https://user-images.githubusercontent.com/36693355/67635257-38d44200-f908-11e9-96ee-48ef3019167e.png" width="45%" />
+<img src="https://user-images.githubusercontent.com/36693355/67635260-3c67c900-f908-11e9-9867-bfb09aab1ad2.png" width="45%" />
+<img src="https://user-images.githubusercontent.com/36693355/67635263-3e318c80-f908-11e9-940e-885bc4f8843a.png" width="45%" />  
+</div>
 
 ### 1.5 사용 시나리오
 1) 첫 화면에서 하단에 가장 인기있는 식당 목록과 최신 리뷰를 확인할 수 있습니다.
